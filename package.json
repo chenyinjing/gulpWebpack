@@ -1,0 +1,49 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress",
+    "build:prod": "webpack -p --progress",
+    "start": "webpack-dev-server --inline --hot --config ./config/webpack.config.dev.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/core-js": "^0.9.37",
+    "@types/hammerjs": "^2.0.34",
+    "@types/lodash": "^4.14.56",
+    "@types/node": "^7.0.8",
+    "@types/source-map": "^0.5.0",
+    "@types/uglify-js": "^2.6.28",
+    "@types/webpack": "^2.2.12",
+    "html-webpack-plugin": "^2.28.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.2",
+    "pug-ng-html-loader": "^1.0.10",
+    "raw-loader": "^0.5.1",
+    "ts-loader": "^2.0.2",
+    "typescript": "^2.2.1",
+    "url-loader": "^0.5.8",
+    "webpack": "2.1.0-beta.22",
+    "webpack-dev-server": "2.1.0-beta.10"
+  },
+  "dependencies": {
+    "@angular/common": "^2.4.10",
+    "@angular/compiler": "^2.4.10",
+    "@angular/core": "^2.4.10",
+    "@angular/forms": "^2.4.10",
+    "@angular/http": "^2.4.10",
+    "@angular/platform-browser": "^2.4.10",
+    "@angular/platform-browser-dynamic": "^2.4.10",
+    "@angular/router": "^3.4.10",
+    "core-js": "^2.4.1",
+    "es6-promise": "^4.1.0",
+    "ie-shim": "^0.1.0",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.2.0",
+    "zone.js": "^0.8.5"
+  }
+}
