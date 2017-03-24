@@ -21,6 +21,19 @@ app.put('/mock/putInfo', function (req, res) {
     }
   });
 });
+
+app.post('/mock/postInfo', function (req, res) {
+  console.log("req.body = ", req.body);
+
+  res.send({
+    errorNo: 0,
+    msg: 'post success!',
+    putInfo: {
+      name: req.body.name,
+      age: req.body.age,
+    }
+  });
+});
 var server = app.listen(5000, function () {
 
   var host = server.address().address

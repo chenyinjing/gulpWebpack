@@ -24,4 +24,9 @@ export class PageComponent {
       console.debug('data = ', data);
     });
   }
+  postMock() {
+    this.httpService.post('/mock/postInfo', {name: 'lvxiaobu',age: 3}).subscribe(data=>{
+      console.debug('data = ', data);
+    });
+  }
 }

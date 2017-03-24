@@ -1,5 +1,7 @@
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http, RequestOptions, Headers } from '@angular/http';
@@ -32,7 +34,22 @@ export class HttpService {
         return Observable.throw(error);
       });
   }
-  // post(url: string, body: Object): Observable<any> {}
+  post(url: string, body: Object): Observable<any> {
+    var options = new RequestOptions({
+      headers: new Headers({ 'Content-Type': 'application/json' }),
+    });
+    return this.http.post(url, body, options)
+      .map(function (res) {
+        try {
+          return res.json() || [];
+        }
+        catch (e) {
+          return res;
+        }
+      }).catch(function (error) {
+        return Observable.throw(error);
+      });
+  }
   // delete(url: string, body: Object): Observable<any> {}
   // request(api: string, body?: Object): Observable<any> {}
 }

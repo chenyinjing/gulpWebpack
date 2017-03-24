@@ -45,15 +45,4 @@ module.exports = {
       {test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=25000'}
     ]
   },
-  devtool: 'cheap-module-source-map',
-  devServer: {
-    hot: true,
-    inline: true,
-    proxy: {
-      '/mock/*': {
-        target: 'http://localhost:5000',
-        secure: false
-      }
-    }
-  },
 };
