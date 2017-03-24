@@ -4,10 +4,8 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 var path = require('path');
 
 module.exports = {
-  // 入口
-  entry: path.resolve(__dirname, 'main.ts'),
-  // entry: path.resolve(__dirname, 'index.js'),
-  // 输出的文件名
+  // entry: path.resolve(__dirname, 'main.ts'),
+  entry: path.resolve(__dirname, 'index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
