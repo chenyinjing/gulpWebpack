@@ -1,10 +1,10 @@
-import { rootPath } from "../../main";
 declare var UE: any;
 require('../libs/ueditor/ueditor.config');
 require('../libs/ueditor/ueditor.all');
 require('../libs/ueditor/lang/zh-cn/zh-cn');
 
 import { Component } from '@angular/core';
+import { HttpService } from "../common/http/http.server";
 
 @Component({
   selector: 'page',
@@ -12,5 +12,16 @@ import { Component } from '@angular/core';
   styles:  [require('./page.component.less')],
 })
 export class PageComponent {
+  constructor(private httpService: HttpService) {}
 
+  getMock() {
+    this.httpService.get('/mock/info').subscribe(data=>{
+      console.debug('data = ', data);
+    });
+  }
+  putMock() {
+    this.httpService.put('/mock/putInfo', {name: 'lvxiaobu',age: 3}).subscribe(data=>{
+      console.debug('data = ', data);
+    });
+  }
 }
