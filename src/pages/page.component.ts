@@ -1,3 +1,4 @@
+import { Observable } from "rxjs";
 declare var UE: any;
 // require('../libs/ueditor/ueditor.config');
 // require('../libs/ueditor/ueditor.all');
@@ -7,7 +8,7 @@ import '../libs/ueditor/ueditor.config';
 import '../libs/ueditor/ueditor.all';
 import '../libs/ueditor/lang/zh-cn/zh-cn';
 
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HttpService } from "../common/http/http.server";
 
 @Component({
@@ -16,7 +17,23 @@ import { HttpService } from "../common/http/http.server";
   styles:  [require('./page.component.less')],
 })
 export class PageComponent {
+  @Input() results: Observable<any>;
+  @Output() todo = new EventEmitter();
+  cliresults;
+
   constructor(private httpService: HttpService) {}
+
+  ngOnInit() {
+    this.results.subscribe(data => {
+      if (data) {
+        this.cliresults = data;
+      }
+    });
+  }
+
+  makeEventEmitter() {
+    this.todo.emit({name: 'makeEventEmitter', age: 30});
+  }
 
   getMock() {
     this.httpService.get('/mock/info').subscribe(data=>{

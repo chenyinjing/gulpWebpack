@@ -1,4 +1,9 @@
+// async 与 subscribe 只能同时用一个，否则会导致 subscribe 无法激活
+//p async: {{ results | async | json }}
+p cliresults: {{ cliresults | json}}
+p cliresults: {{ cliresults.name }}
 
+button((click)="makeEventEmitter()") EventEmitter
 
 
 .test
@@ -7,7 +12,7 @@
   button((click)='putMock()') put
   button((click)='postMock()') post
 
-img(src='/src/assets/img/test.png')
+//img(src='/src/assets/img/test.png')
 
 
 ueditor

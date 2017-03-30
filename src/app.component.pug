@@ -1,2 +1,3 @@
 .test
-  page
+  button((click)="changeResult()") changeResult
+  page([results]='counter', (todo)='todoEmit($event)')
