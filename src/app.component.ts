@@ -14,6 +14,7 @@ export class AppComponent {
   counterObser;
   constructor() {
   this.counter = new Observable<any>((observer) => {
+      // 中间这个函数的名字其实就是 subscribe, 它会在被 subscribe 的时候，在订阅它的那个环境执行这个函数
       observer.next(this.pass);
       this.counterObser = observer;
     });

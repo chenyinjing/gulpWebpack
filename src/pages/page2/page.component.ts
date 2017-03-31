@@ -9,14 +9,14 @@ import '../libs/ueditor/ueditor.all';
 import '../libs/ueditor/lang/zh-cn/zh-cn';
 
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { HttpService } from "../common/http/http.server";
+import { HttpService } from "../../common/http/http.server";
 
 @Component({
-  selector: 'page',
+  selector: 'page2',
   template: require('./page.component.pug'),
   styles:  [require('./page.component.less')],
 })
-export class PageComponent {
+export class Page2Component {
   @Input() results: Observable<any>;
   @Output() todo = new EventEmitter();
   cliresults;

@@ -1,0 +1,9 @@
+// async 与 subscribe 只能同时用一个，否则会导致 subscribe 无法激活
+//p async: {{ results | async | json }}
+p page2
+
+p cliresults: {{ cliresults | json}}
+p cliresults: {{ cliresults.name }}
+
+button((click)="makeEventEmitter()") EventEmitter
+
