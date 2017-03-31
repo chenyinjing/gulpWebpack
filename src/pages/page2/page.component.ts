@@ -4,9 +4,9 @@ declare var UE: any;
 // require('../libs/ueditor/ueditor.all');
 // require('../libs/ueditor/lang/zh-cn/zh-cn');
 
-import '../libs/ueditor/ueditor.config';
-import '../libs/ueditor/ueditor.all';
-import '../libs/ueditor/lang/zh-cn/zh-cn';
+import '../../libs/ueditor/ueditor.config';
+import '../../libs/ueditor/ueditor.all';
+import '../../libs/ueditor/lang/zh-cn/zh-cn';
 
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HttpService } from "../../common/http/http.server";
